@@ -1,0 +1,43 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Contact Me!</h1>
+    <p class="lead">Hello, if you feel the need to contact me then fill in this form and I will respond to you in less than 24 hours. Thank
+      you for your time and please continue looking through this portfolio.</p>
+  </div>
+  <div class="container">
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Full Name</span>
+        </div>
+        <input class="form-control align-middle" type="text" placeholder="Enter Full Name" [(ngModel)]="contact.userName" [ngModelOptions]="{standalone: true}"
+          required>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+        </div>
+        <input class="form-control align-middle" type="text" placeholder="Enter Email" [(ngModel)]="contact.userEmail" [ngModelOptions]="{standalone: true}"
+          required>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Phone Number</span>
+        </div>
+        <input class="form-control align-middle" type="tel" placeholder="Enter Phone Number (Optional)" [(ngModel)]="contact.userPhoneNumber"
+          [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Comments/Messages</span>
+        </div>
+        <textarea class="form-control" placeholder="Enter Messages/Comments" [(ngModel)]="contact.userComments" [ngModelOptions]="{standalone: true}"
+          required></textarea>
+      </div>
+      <br>
+      <div>
+        <button [disabled]="!contactForm.valid" id="submit" type="submit" class="btn btn-outline-dark">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

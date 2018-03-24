@@ -1,0 +1,110 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="Admin-Login">Asarel Castellanos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="Home" routerLinkActive="active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="About-Me" routerLinkActive="active">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="Blog/5ab690f2e27dc02604248c80" routerLinkActive="active">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="Contact" routerLinkActive="active">Contact Me</a>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
+                    Login/Register
+                </button>
+            </li>
+        </ul>
+    </div>
+</nav>
+<router-outlet></router-outlet>
+
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Login and Register</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="login-tab" data-toggle="tab" href="#login-tab" role="tab" aria-controls="login-tab"
+                            aria-selected="true">Login</a>
+                        <a class="nav-item nav-link" id="register-tab" data-toggle="tab" href="#register-tab" role="tab" aria-controls="register-tab"
+                            aria-selected="false">Register</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="login-tab" role="tabpanel" aria-labelledby="login-tab">
+                        <div class="jumbotron jumbotron-fluid">
+                            <div class="container">
+                                <h1 class="display-4">Login</h1>
+                                <p class="lead">If you have an account enter the information, if not then register.</p>
+                                <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="form-signin">
+                                    <div class="input-group text-center mb-3">
+                                        <div class="input-group-prepend form-label-group">
+                                            <span class="input-group-text h3 mb-3 font-weight-normal" id="inputGroup-sizing-default">Email</span>
+                                        </div>
+                                        <input class="form-control h3 mb-3 font-weight-normal" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                                            type="text" placeholder="Email/Username" required [(ngModel)]="credentials.email"
+                                            #email="ngModel" name="email">
+                                    </div>
+                                    <div class="input-group text-center mb-3">
+                                        <div class="input-group-prepend form-label-group">
+                                            <span class="input-group-text h3 mb-3 font-weight-normal" id="inputGroup-sizing-default">Password</span>
+                                        </div>
+                                        <input class="form-control h3 mb-3 font-weight-normal" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                                            type="password" placeholder="Password" required [(ngModel)]="credentials.password"
+                                            #password="ngModel" name="password">
+                                    </div>
+                                    <button [disabled]="!loginForm.valid" id="submit" type="submit" class="btn btn-outline-dark">Sign In</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="register-tab" role="tabpanel" aria-labelledby="register-tab">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-login-tab">
+                            <div class="jumbotron jumbotron-fluid">
+                                <div class="container">
+                                    <h1 class="display-4">Register</h1>
+                                    <p class="lead">If you don't have an account, register then login in.</p>
+                                    <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="form-signin">
+                                        <div class="input-group text-center mb-3">
+                                            <div class="input-group-prepend form-label-group">
+                                                <span class="input-group-text h3 mb-3 font-weight-normal" id="inputGroup-sizing-default">Email</span>
+                                            </div>
+                                            <input class="form-control h3 mb-3 font-weight-normal" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                                                type="text" placeholder="Email/Username" required [(ngModel)]="credentials.email"
+                                                #email="ngModel" name="email">
+                                        </div>
+                                        <div class="input-group text-center mb-3">
+                                            <div class="input-group-prepend form-label-group">
+                                                <span class="input-group-text h3 mb-3 font-weight-normal" id="inputGroup-sizing-default">Password</span>
+                                            </div>
+                                            <input class="form-control h3 mb-3 font-weight-normal" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                                                type="password" placeholder="Password" required [(ngModel)]="credentials.password"
+                                                #password="ngModel" name="password">
+                                        </div>
+                                        <button [disabled]="!loginForm.valid" id="submit" type="submit" class="btn btn-outline-dark">Sign In</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

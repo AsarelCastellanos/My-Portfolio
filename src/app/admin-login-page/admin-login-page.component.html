@@ -1,0 +1,24 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Admin Login</h1>
+    <p class="lead">If you are not an Admin but have gained access to this page, please go back to <a routerLink="Home">Home</a>. Thank you and I hope you enjoy
+      looking through my content.</p>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="form-signin">
+      <div class="input-group text-center mb-3">
+        <div class="input-group-prepend form-label-group">
+          <span class="input-group-text h3 mb-3 font-weight-normal" id="inputGroup-sizing-default">Email</span>
+        </div>
+        <input class="form-control h3 mb-3 font-weight-normal" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+          type="text" placeholder="Email/Username" required [(ngModel)]="credentials.email" #email="ngModel" name="email">
+      </div>
+      <div class="input-group text-center mb-3">
+        <div class="input-group-prepend form-label-group">
+          <span class="input-group-text h3 mb-3 font-weight-normal" id="inputGroup-sizing-default">Password</span>
+        </div>
+        <input class="form-control h3 mb-3 font-weight-normal" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+          type="password" placeholder="Password" required [(ngModel)]="credentials.password" #password="ngModel" name="password">
+      </div>
+      <button [disabled]="!loginForm.valid" id="submit" type="submit" class="btn btn-outline-dark">Sign In</button>
+    </form>
+  </div>
+</div>
