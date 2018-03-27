@@ -8,12 +8,12 @@ import 'rxjs/add/operator/catch';
 import { baseUrl } from '../httpBaseUrl/httpBaseUrl';
 
 @Injectable()
-export class AuthService {
+export class PostBlogService {
 
   constructor(public http: HttpClient) { }
 
-  login(payload) {
-    const endPoint = baseUrl + '/admin/login';
+  postBlog(payload) {
+    const endPoint = baseUrl + '/postBlog';
     return this.http.post(endPoint, payload);
   }
 

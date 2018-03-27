@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../_services/auth/auth.service';
 import { Router } from '@angular/router';
 
-var localStorage = window.localStorage
+const localStorage = window.localStorage;
 
 class Credentials {
   email: string;
@@ -35,13 +35,13 @@ export class AdminLoginPageComponent implements OnInit {
         console.log(res);
         if (res.type === true) {
           localStorage.setItem('authorization', res.token);
-          this.credentials.email = "";
-          this.credentials.password = "";
+          this.credentials.email = '';
+          this.credentials.password = '';
           this.router.navigateByUrl('Admin-Home');
-          console.log(res.data)
-        } else if (this.credentials.email != 'asarelc@gmail.com') {
+          console.log(res.data);
+        } else if (this.credentials.email !== 'asarelc@gmail.com') {
           alert('Wrong email!');
-        } else if (this.credentials.password != 'wu4azare') {
+        } else if (this.credentials.password !== 'wu4azare') {
           alert('Wrong password!');
         }
       }, (err) => {

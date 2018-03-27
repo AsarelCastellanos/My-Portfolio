@@ -1,68 +1,57 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
-      <h1 class="mt-4">Blog</h1>
+      <h1 class="mt-4">A Blog</h1>
       <p class="lead">
         by
-        <a href="#"> {{ blog.author }} </a>
+        <a href="#"> {{ blog.author }} </a> 
       </p>
       <hr>
       <p> {{ blog.createdDate }} </p>
       <hr>
       <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
       <hr>
-      <p class="lead"><b> {{ blog.title }} </b></p>
+      <p class="lead">
+        <b> {{ blog.title }} </b>
+      </p>
       <p> {{ blog.content }} </p>
       <hr>
       <div class="card my-4">
         <h5 class="card-header">Leave a Comment:</h5>
         <div class="card-body">
-          <form>
-            <div class="form-group">
-              <textarea class="form-control" rows="3"></textarea>
+          <form #commentForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+              </div>
+              <input class="form-control align-middle" type="text" placeholder="Enter Name" [(ngModel)]="comment.name" [ngModelOptions]="{standalone: true}"
+                required>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Comment</span>
+              </div>
+              <textarea class="form-control" placeholder="Enter Comment" [(ngModel)]="comment.content" [ngModelOptions]="{standalone: true}"
+                required></textarea>
+            </div>
+            <br>
+            <div>
+              <button [disabled]="!commentForm.valid" id="submit" type="submit" class="btn btn-outline-dark">Submit</button>
+            </div>
           </form>
         </div>
       </div>
-      <!-- Single Comment -->
-      <div class="media mb-4">
-        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-        <div class="media-body">
-          <h5 class="mt-0">Commenter Name</h5>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-          vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-          in faucibus.
-        </div>
-      </div>
-      <!-- Comment with nested comments -->
-      <div class="media mb-4">
-        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-        <div class="media-body">
-          <h5 class="mt-0">Commenter Name</h5>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-          vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-          in faucibus.
-          <div class="media mt-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Commenter Name</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-              vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
-              felis in faucibus.
-            </div>
-          </div>
-          <div class="media mt-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Commenter Name</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-              vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
-              felis in faucibus.
-            </div>
-          </div>
-        </div>
-      </div>
+        <ul>
+          <li *ngFor="let comment of cycleComments">
+          {{ comment.name }}
+          {{ comment.content }}
+          <ul>
+              <li *ngFor="let reply of comment.replies">
+              {{ reply.name }}:
+              {{ reply.content }}
+              </li>
+          </ul>
+          </li>
+      </ul>
     </div>
   </div>
-  <!-- /.container -->

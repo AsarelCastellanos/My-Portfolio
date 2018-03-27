@@ -22,7 +22,7 @@ interface ServerResponse {
 })
 export class ContactPageComponent implements OnInit {
   contact: Contact;
-  
+
   constructor(public contactService: ContactService, private router: Router) { }
 
   ngOnInit() {
@@ -30,10 +30,10 @@ export class ContactPageComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.contact)
+    console.log(this.contact);
     this.contactService.contact(this.contact)
       .subscribe((res: ServerResponse) => {
-        console.log(res)
+        console.log(res);
       });
   }
 

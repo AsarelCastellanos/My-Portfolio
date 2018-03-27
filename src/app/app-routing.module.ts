@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-//Regular Users
+// Regular Users
 import { HomePageComponent } from './home-page/home-page.component';
 import { AboutMePageComponent } from './about-me-page/about-me-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
-//Admin
+// Admin
 import { AdminLoginPageComponent } from './admin-login-page/admin-login-page.component';
 import { AdminHomePageComponent } from './admin-home-page/admin-home-page.component';
 import { AdminPostPageComponent } from './admin-post-page/admin-post-page.component';
@@ -23,8 +23,8 @@ const routes: Routes = [
     path: 'Contact',
     component: ContactPageComponent
   },
-  { path: 'Blog/:id', 
-    component: BlogPageComponent 
+  { path: 'Blog/:id',
+    component: BlogPageComponent
   },
   {
     path: 'Admin-Login',

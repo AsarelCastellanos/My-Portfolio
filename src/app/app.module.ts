@@ -5,20 +5,22 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
-//Regular Users
+// Regular Users
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AboutMePageComponent } from './about-me-page/about-me-page.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
-//Admin Pages
+// Admin Pages
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { AdminLoginPageComponent } from './admin-login-page/admin-login-page.component';
 import { AdminHomePageComponent } from './admin-home-page/admin-home-page.component';
 import { AdminPostPageComponent } from './admin-post-page/admin-post-page.component';
-//Serivces
+// Serivces
 import { AuthService } from './_services/auth/auth.service';
 import { ContactService } from './_services/contact/contact.service';
 import { BlogService } from './_services/blog/blog.service';
+import { PostBlogService } from './_services/postBlog/post-blog.service';
+import { CommentService } from './_services/comment/comment.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { BlogService } from './_services/blog/blog.service';
   providers: [
     AuthService,
     ContactService,
-    BlogService
+    BlogService,
+    PostBlogService,
+    CommentService
   ],
   bootstrap: [AppComponent]
 })

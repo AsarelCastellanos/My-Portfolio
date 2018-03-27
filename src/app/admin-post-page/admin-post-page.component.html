@@ -1,0 +1,39 @@
+<div class="jumbotron">
+    <h1 class="display-4">Post A Blog</h1>
+    <p class="lead">Post a new blog.</p>
+    <hr class="my-4">
+    <div class="container">
+        <form #blogForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Blog Author</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Default" placeholder="Name of Author" aria-describedby="inputGroup-sizing-default"
+                        [(ngModel)]="blog.author" [ngModelOptions]="{standalone: true}" required>
+                </div>
+                <small id="emailHelp" class="form-text text-muted">Optional: The default is Asarel Castellanos</small>
+            </div>
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Blog Title</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Default" placeholder="Title of Blog" aria-describedby="inputGroup-sizing-default"
+                        [(ngModel)]="blog.title" [ngModelOptions]="{standalone: true}" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Blog Content</span>
+                    </div>
+                    <textarea type="text" class="form-control" aria-label="Default" placeholder="Content of Blog" aria-describedby="inputGroup-sizing-default"
+                        [(ngModel)]="blog.content" [ngModelOptions]="{standalone: true}" required></textarea>
+                </div>
+            </div>
+            <button type="submit" [disabled]="!blogForm.valid" class="btn btn-outline-dark">Submit</button>
+        </form>
+    </div>
+</div>
+<a class="btn btn-primary btn-lg" href="https://mlab.com/databases/portfolio-server" role="button">Backend Access</a>
