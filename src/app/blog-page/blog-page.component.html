@@ -24,14 +24,14 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
               </div>
-              <input class="form-control align-middle" type="text" placeholder="Enter Name" [(ngModel)]="comment.name" [ngModelOptions]="{standalone: true}"
+              <input class="form-control align-middle" type="text" placeholder="Enter Name" [(ngModel)]="newComment.name" [ngModelOptions]="{standalone: true}"
                 required>
             </div>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">Comment</span>
               </div>
-              <textarea class="form-control" placeholder="Enter Comment" [(ngModel)]="comment.content" [ngModelOptions]="{standalone: true}"
+              <textarea class="form-control" placeholder="Enter Comment" [(ngModel)]="newComment.content" [ngModelOptions]="{standalone: true}"
                 required></textarea>
             </div>
             <br>
