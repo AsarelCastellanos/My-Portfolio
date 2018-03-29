@@ -45,13 +45,13 @@
           <li *ngFor="let comment of cycleComments">
           {{ comment.name }}
           {{ comment.content }}
-          <ul>
-              <li *ngFor="let reply of comment.replies">
-              {{ reply.name }}:
-              {{ reply.content }}
-              </li>
-          </ul>
           </li>
+          <ul *ngFor="let reply of comment.replies">
+            <li>
+              {{ reply.name }}
+              {{ reply.content }}
+            </li>
+          </ul>
       </ul>
     </div>
   </div>

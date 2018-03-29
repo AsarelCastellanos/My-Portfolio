@@ -9,6 +9,9 @@ import { baseUrl } from '../httpBaseUrl/httpBaseUrl';
 
 @Injectable()
 export class AuthService {
+  authtoken: any;
+  token: any;
+  user: any;
 
   constructor(public http: HttpClient) { }
 

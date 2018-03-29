@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 
 // Regular Users
@@ -21,6 +20,7 @@ import { ContactService } from './_services/contact/contact.service';
 import { BlogService } from './_services/blog/blog.service';
 import { PostBlogService } from './_services/postBlog/post-blog.service';
 import { CommentService } from './_services/comment/comment.service';
+import { AuthGuard } from './_services/authGuard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,8 @@ import { CommentService } from './_services/comment/comment.service';
     ContactService,
     BlogService,
     PostBlogService,
-    CommentService
+    CommentService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

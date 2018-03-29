@@ -9,6 +9,7 @@ import { BlogPageComponent } from './blog-page/blog-page.component';
 import { AdminLoginPageComponent } from './admin-login-page/admin-login-page.component';
 import { AdminHomePageComponent } from './admin-home-page/admin-home-page.component';
 import { AdminPostPageComponent } from './admin-post-page/admin-post-page.component';
+import { AuthGuard } from './_services/authGuard/auth.guard';
 
 const routes: Routes = [
   {
@@ -32,11 +33,13 @@ const routes: Routes = [
   },
   {
     path: 'Admin-Home',
-    component: AdminHomePageComponent
+    component: AdminHomePageComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'Admin-Post',
-    component: AdminPostPageComponent
+    component: AdminPostPageComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '**',

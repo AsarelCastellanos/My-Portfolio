@@ -74,13 +74,10 @@ export class BlogPageComponent implements OnInit {
       console.log(params);
     });
   }
+ ngOnInit() {
 
-  ngOnInit() {
-
-  }
-
+ }
   pullData() {
-
     const headers = new HttpHeaders().set('ID', this.headerID);
 
     this.blog = new Blog;
@@ -111,6 +108,9 @@ export class BlogPageComponent implements OnInit {
           throw error;
         }
         console.log(res);
+        this.comment.content = '';
+        alert('Message has been sent.');
+        window.location.reload();
       });
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ContactService } from '../_services/contact/contact.service';
 import { Router } from '@angular/router';
+import { error } from 'util';
 
 class Contact {
   userName: String;
@@ -34,6 +35,9 @@ export class ContactPageComponent implements OnInit {
     this.contactService.contact(this.contact)
       .subscribe((res: ServerResponse) => {
         console.log(res);
+        if (error) {
+          throw error;
+        }
       });
   }
 
